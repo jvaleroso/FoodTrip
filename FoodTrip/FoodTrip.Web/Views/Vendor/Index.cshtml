@@ -1,0 +1,34 @@
+﻿@using FoodTrip
+@model IEnumerable<FoodTrip.Menu>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Date)</td>
+            <td>@item.MenuStatus.ToString("G")</td>
+            <td>
+                @if (item.MenuStatus == MenuStatus.Draft)
+                {
+                    @Html.ActionLink("Publish", "Publish")
+                }
+            </td>
+        </tr>
+    }
+    
+
+</table>

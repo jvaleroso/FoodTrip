@@ -1,0 +1,53 @@
+﻿USE foodtrip
+GO
+
+CREATE TABLE Food(
+	Id BIGINT IDENTITY(1,1) not null,
+	Name NVARCHAR(20) not null,
+	Description NVARCHAR(250) not null
+	PRIMARY KEY(Id)
+)
+
+CREATE TABLE Menu(
+	Id BIGINT IDENTITY(1,1) not null,
+	MenuStatus TINYINT not null,
+	Date DATETIME not null,
+	UserId BIGINT,
+	PRIMARY KEY (Id)
+)
+
+CREATE TABLE MenuItem(
+	Id BIGINT IDENTITY(1,1) NOT NULL,
+	Quantity INT NOT NULL,
+	OrderQuantity INT NOT NULL,
+	Price NUMERIC(10,4) NOT NULL,
+	FoodId BIGINT NOT NULL,
+	MenuId BIGINT NOT NULL,
+	PRIMARY KEY (Id)
+)
+
+CREATE TABLE [User](
+	Id BIGINT IDENTITY(1,1) NOT NULL,
+	Username NVARCHAR(20) NOT NULL,
+	Password NVARCHAR(20) NOT NULL,
+	FullName NVARCHAR(50) NOT NULL,
+	Email NVARCHAR(50) NULL,
+	ContactNo NVARCHAR(20) NOT NULL,
+	UserType TINYINT NOT NULL
+    PRIMARY KEY (Id)
+)
+
+ALTER TABLE Menu ADD CONSTRAINT [FK_Menu_User]
+	FOREIGN KEY(UserId)
+	REFERENCES [User](Id)
+
+ALTER TABLE MenuItem ADD CONSTRAINT [FK_MenuItem_Food]
+	FOREIGN KEY(FoodId)
+	REFERENCES Food(Id)
+
+
+ALTER TABLE MenuItem ADD CONSTRAINT [FK_MenuItem_Menu]
+	FOREIGN KEY(MenuId)
+	REFERENCES Menu(Id)
+
+

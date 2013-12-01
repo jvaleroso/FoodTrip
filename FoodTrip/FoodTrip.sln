@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrip.Web", "FoodTrip.Web\FoodTrip.Web.csproj", "{FE8BDA63-5F72-4DCD-824A-2565F0E20218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrip.Dao.NHibernate", "FoodTrip.Dao.NHibernate\FoodTrip.Dao.NHibernate.csproj", "{1ABCDF98-18CD-403E-A836-4D8B38CFE9D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrip", "FoodTrip\FoodTrip.csproj", "{847BDC9B-1A94-47D7-8F63-E00D16679BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrip.Dao.NHibernate.SqlServer", "FoodTrip.Dao.NHibernate.SqlServer\FoodTrip.Dao.NHibernate.SqlServer.csproj", "{2BA535CC-CE7E-49DA-8BD8-2F779C94C264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrip.Services", "FoodTrip.Services\FoodTrip.Services.csproj", "{7CD6FAA7-E207-49A4-8B0B-EA8036D848D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE8BDA63-5F72-4DCD-824A-2565F0E20218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8BDA63-5F72-4DCD-824A-2565F0E20218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8BDA63-5F72-4DCD-824A-2565F0E20218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8BDA63-5F72-4DCD-824A-2565F0E20218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ABCDF98-18CD-403E-A836-4D8B38CFE9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ABCDF98-18CD-403E-A836-4D8B38CFE9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ABCDF98-18CD-403E-A836-4D8B38CFE9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ABCDF98-18CD-403E-A836-4D8B38CFE9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{847BDC9B-1A94-47D7-8F63-E00D16679BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{847BDC9B-1A94-47D7-8F63-E00D16679BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{847BDC9B-1A94-47D7-8F63-E00D16679BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{847BDC9B-1A94-47D7-8F63-E00D16679BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA535CC-CE7E-49DA-8BD8-2F779C94C264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA535CC-CE7E-49DA-8BD8-2F779C94C264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA535CC-CE7E-49DA-8BD8-2F779C94C264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA535CC-CE7E-49DA-8BD8-2F779C94C264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD6FAA7-E207-49A4-8B0B-EA8036D848D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD6FAA7-E207-49A4-8B0B-EA8036D848D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD6FAA7-E207-49A4-8B0B-EA8036D848D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD6FAA7-E207-49A4-8B0B-EA8036D848D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
