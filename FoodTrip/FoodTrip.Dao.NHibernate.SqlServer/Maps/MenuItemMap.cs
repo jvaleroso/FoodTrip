@@ -10,7 +10,6 @@ namespace FoodTrip.Dao.NHibernate.SqlServer.Maps
         {
             Table("MenuItem");
             Id(c => c.Id, m => m.Generator(Generators.Native));
-            Property(c=>c.Name, m=> { m.NotNullable(true);  m.Length(20);});
             Property(c => c.Quantity, m => m.NotNullable(true));
             Property(c => c.OrderQuantity, m => m.NotNullable(true));
             Property(c => c.Price, m =>

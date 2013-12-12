@@ -19,7 +19,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@Html.DisplayFor(modelItem => item.Date)</td>
+            <td>@Html.ActionLink(item.Date.ToShortDateString(),"Menu", new {id = item.Id})</td>
             <td>@item.MenuStatus.ToString("G")</td>
             <td>
                 @if (item.MenuStatus == MenuStatus.Draft)

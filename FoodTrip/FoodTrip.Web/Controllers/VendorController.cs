@@ -10,11 +10,16 @@ namespace FoodTrip.Web.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMenuService _menuService;
+        private readonly IFoodService _foodService;
 
-        public VendorController(IUserService userService, IMenuService menuService)
+        public VendorController(
+              IUserService userService
+            , IMenuService menuService
+            , IFoodService foodService)
         {
             _userService = userService;
             _menuService = menuService;
+            _foodService = foodService;
         }
 
         public ActionResult Index()
@@ -26,11 +31,17 @@ namespace FoodTrip.Web.Controllers
         public ActionResult Menu(int id)
         {
             var menu = _menuService.GetMenu(id);
+
+            if (menu == null)
+                return RedirectToAction("Index");
+
             var menuViewModel = new MenuViewModel
             {
                 Id = menu.Id,
-                Date = menu.Date
+                Date = menu.Date,
+                MenuItems = menu.MenuItems,
             };
+
             return View(menuViewModel);
         }
 
@@ -60,6 +71,7 @@ namespace FoodTrip.Web.Controllers
             _menuService.Save(_menu);
 
             return RedirectToAction("Index");
+        
         }
 
         [HttpPost]
@@ -70,6 +82,19 @@ namespace FoodTrip.Web.Controllers
 
             _menuService.Save(_menu);
 
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult CreateFood()
+        {
+            return this.View();
+
+        }
+
+        [HttpPost]
+        public ActionResult CreateFood(Food food)
+        {
+            _foodService.Save(food);
             return RedirectToAction("Index");
         }
     }

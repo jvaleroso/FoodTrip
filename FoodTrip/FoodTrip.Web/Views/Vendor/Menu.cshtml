@@ -8,7 +8,7 @@
 
 <div>
     <h4>Menu</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Date)
@@ -19,18 +19,31 @@
         </dd>
 
     </dl>
-    <table>
-        <th>
-            <tr>
-                <th></th>
+    <a href="/Vendor/Menu/@Model.Id/AddItem">Add Menu Item</a>
+    <table class="table table-bordered">
+        <caption>Menu Items</caption>
+        <thead>
+            <tr class="warning">
+                <th>Food</th>
+                <th>Price</th>
+                <th>Qty.</th>
+                <th>Order Qty.</th>
             </tr>
-        </th>
-        @foreach (var item in Model.MenuItems)
-        {
-            <tr>
-                <td></td>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.MenuItems)
+            {
+                <tr>
+                    <td>@item.Food.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.OrderQuantity</td>
+                </tr>
+            }
+            <tr class="success">
+                <td colspan="4">Total: @Model.MenuItems.Count()</td>
             </tr>
-        }
+        </tbody>
     </table>
 
 </div>

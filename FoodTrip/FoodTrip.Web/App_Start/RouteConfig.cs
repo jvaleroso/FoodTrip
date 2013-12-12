@@ -13,11 +13,11 @@ namespace FoodTrip.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "Menu",
-            //    url: "Vendor/Menu/{id}",
-            //    defaults: new { controller = "Vendor", action = "Menu", id = 0 }
-            //    );
+            routes.MapRoute(
+                name: "Menu",
+                url: "Vendor/Menu/{menuId}/AddItem",
+                defaults: new { controller = "MenuItem", action = "AddMenuItem", menuId = 0 }
+                );
 
             //routes.MapRoute(
             //     name: "CreateMenu",

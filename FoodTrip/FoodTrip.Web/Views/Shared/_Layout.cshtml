@@ -24,9 +24,13 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.IsInRole("Vendor"))
                     {
                         <li>@Html.ActionLink("Vendor", "Index", "Vendor")</li>
+                        <li>@Html.ActionLink("Food", "Index", "Food")</li>
+                    }
+                    @if (User.IsInRole("Customer"))
+                    {
                         <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
                     }
                 </ul>

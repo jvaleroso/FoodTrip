@@ -9,7 +9,6 @@ namespace FoodTrip.Dao.NHibernate.Repo
     public class MenuItemRepo
     {
         public virtual long Id { get; set; }
-        public virtual string Name { get; set; }
         public virtual int Quantity { get; set; }
         public virtual int OrderQuantity { get; set; }
         public virtual decimal Price { get; set; }

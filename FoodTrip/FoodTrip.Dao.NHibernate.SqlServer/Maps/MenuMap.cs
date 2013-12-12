@@ -32,6 +32,7 @@ namespace FoodTrip.Dao.NHibernate.SqlServer.Maps
                 m.Cascade(Cascade.DeleteOrphans);
                 m.Inverse(true);
                 m.Key(k => k.Column("MenuId"));
+                m.Fetch(CollectionFetchMode.Select);
                 m.Lazy(CollectionLazy.NoLazy);
             }, ce => ce.OneToMany());
 
