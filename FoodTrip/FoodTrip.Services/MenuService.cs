@@ -35,5 +35,20 @@ namespace FoodTrip.Services
         {
             return _menuDao.GetList();
         }
+
+
+        public void Publish(Menu menu)
+        {
+            menu.MenuStatus = MenuStatus.Published;
+            _menuDao.Save(menu);
+        }
+
+
+        public Menu SaveNew(Menu menu, User user)
+        {
+            menu.MenuStatus = MenuStatus.Draft;
+            menu.Vendor = user;
+            return _menuDao.Save(menu);
+        }
     }
 }

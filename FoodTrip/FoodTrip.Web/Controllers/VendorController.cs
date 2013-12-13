@@ -10,16 +10,11 @@ namespace FoodTrip.Web.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMenuService _menuService;
-        private readonly IFoodService _foodService;
 
-        public VendorController(
-              IUserService userService
-            , IMenuService menuService
-            , IFoodService foodService)
+        public VendorController(IUserService userService, IMenuService menuService)
         {
             _userService = userService;
             _menuService = menuService;
-            _foodService = foodService;
         }
 
         public ActionResult Index()
@@ -51,7 +46,7 @@ namespace FoodTrip.Web.Controllers
             var _menu = _menuService.GetMenu(menu.Id);
             _menu.Date = menu.Date;
             _menuService.Save(_menu);
-            return RedirectToAction("Index");   
+            return RedirectToAction("Index");
         }
 
         public ActionResult Create()
@@ -66,35 +61,20 @@ namespace FoodTrip.Web.Controllers
             if (!ModelState.IsValid) return RedirectToAction("Index");
 
             var user = _userService.GetByUsername(User.Identity.Name);
-            _menu.Vendor = user;
-            _menu.MenuStatus = MenuStatus.Draft;
-            _menuService.Save(_menu);
+
+            _menuService.SaveNew(_menu, user);
 
             return RedirectToAction("Index");
-        
+
         }
 
         [HttpPost]
         public ActionResult Publish(MenuViewModel menu)
         {
             var _menu = _menuService.GetMenu(menu.Id);
-            _menu.MenuStatus = MenuStatus.Published;
 
-            _menuService.Save(_menu);
+            _menuService.Publish(_menu);
 
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult CreateFood()
-        {
-            return this.View();
-
-        }
-
-        [HttpPost]
-        public ActionResult CreateFood(Food food)
-        {
-            _foodService.Save(food);
             return RedirectToAction("Index");
         }
     }
