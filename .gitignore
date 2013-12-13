@@ -3,9 +3,11 @@ FoodTrip/FoodTrip.Dao.NHibernate.SqlServer/obj/
 FoodTrip/FoodTrip.Dao.NHibernate/bin/
 FoodTrip/FoodTrip.Dao.NHibernate/obj/
 FoodTrip/FoodTrip.Services/obj/
-FoodTrip/FoodTrip.Web/bin/
-FoodTrip/FoodTrip.Web/obj/
-FoodTrip/FoodTrip/obj/
 FoodTrip/FoodTrip.Services/bin/
 FoodTrip/FoodTrip.Test/bin/
 FoodTrip/FoodTrip.Test/obj/
+FoodTrip/FoodTrip.Web/bin/
+FoodTrip/FoodTrip.Web/obj/
+FoodTrip/FoodTrip/obj/
+FoodTrip/FoodTrip/bin/
+
